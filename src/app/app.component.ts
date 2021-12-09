@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Pokemons';
+  //tableau de pokemons faisant referance à la classe Pokemon dans pokemons.ts
+  //pokemons! : Pokemon[];
+
+
+ 
+  ngOnInit() {
+    // on assigne ici pokemon car son contenant vient d'ailleurs
+    //this.pokemons = POKEMONS;
+  }
+/*   selectPokemon(pokemon:Pokemon){
+    console.log('Vous avez selectionné ' + pokemon.name);
+  } */
+
 }
