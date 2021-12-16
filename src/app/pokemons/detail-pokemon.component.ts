@@ -5,9 +5,9 @@ import { POKEMONS } from './mock-pokemons';
 import { PokemonService } from './pokemons.service';
  
 @Component({
-    selector: 'list-pokemon',
+    selector: 'detail-pokemon',
     templateUrl: './detail-pokemon.component.html',
-    //styleUrls: ['/app.component.css']
+    styleUrls: ['../app.component.css']
 })
 export class DetailPokemonComponent implements OnInit {
  
@@ -18,12 +18,15 @@ export class DetailPokemonComponent implements OnInit {
  
     ngOnInit():void {
         
-        this.ids = (this.route.snapshot.paramMap.get('id'));
-        this.pokemon = this.pokemonService.getPokemon(this.ids)
+        this.ids = this.route.snapshot.paramMap.get('id');
+        this.pokemon = this.pokemonService.getPokemon(+this.ids)
     }
  
     goBack():void {
         this.router.navigate(['/pokemons']);
     }
- 
+    goEdit(pokemon:Pokemon):void{
+        let link = ['/pokemon/edit', pokemon.id];
+        this.router.navigate(link)
+    }
 }

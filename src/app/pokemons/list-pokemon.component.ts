@@ -7,9 +7,10 @@ import { PokemonService } from './pokemons.service';
 @Component({
   selector: 'detail-pokemon',
   templateUrl:'/list-pokemon.component.html',
+  styleUrls:['/pokemon-form.component.css']
 })
 export class ListPokemonComponent implements OnInit{
-  //tableau de pokemons faisant referance à la classe Pokemon dans pokemons.ts
+  //tableau de pokemons faisant reference à la classe Pokemon dans pokemons.ts
   pokemons! : Pokemon[];
 
   constructor(private router:Router, private pokemonService:PokemonService){}
@@ -19,9 +20,10 @@ export class ListPokemonComponent implements OnInit{
     //this.pokemons = POKEMONS;
     this.pokemons = this.pokemonService.getPokemons();
   }
+ 
   selectPokemon(pokemon:Pokemon):void{
-      let link = ['/pokemon', pokemon.id];
-      this.router.navigate(link);
+    let link = ['/pokemon', pokemon.id];
+    this.router.navigate(link);
   }
   
 }

@@ -1,0 +1,6 @@
+<div>
+    <h2 class="header center">Pokemon :  {{ pokemon?.name }}</h2>
+    
+    <img *ngIf=" pokemon " [src]="pokemon.picture">
+    <pokemon-form [pokemon]="pokemon"></pokemon-form>
+</div>
