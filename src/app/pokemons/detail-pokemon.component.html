@@ -50,20 +50,17 @@
                       </table>
                 </div>
              <div class="card-action">
-                    <p>
                         <a  (click) = "goBack()" class="a-link">Retour</a>
-                    </p>
-                    <p>
-                         <!-- lien vers kla page d'edition de ce pokemon -->
-                        <a (click)="goEdit(pokemon)" class="a-link">Editer le Pokemon</a>
-                    </p>
+
+                         <!-- lien vers la page d'edition de ce pokemon -->
+                        <a (click)="goEdit(pokemon)" class="a-link">Editer</a>
+
+                        <a (click)="delete(pokemon)" class="a-link">Supprimer</a>
             </div>
         </div>
         </div>
     </div>
-
  </div>
- 
  <h4 *ngIf='!pokemon' class="center">Aucun pokémon à afficher !</h4> 
  
 </body>

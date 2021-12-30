@@ -18,12 +18,18 @@ export class ListPokemonComponent implements OnInit{
   ngOnInit():void{
     // on assigne ici pokemon car son contenant vient d'ailleurs
     //this.pokemons = POKEMONS;
-    this.pokemons = this.pokemonService.getPokemons();
+    //this.pokemons = this.pokemonService.getPokemons();
+    this.pokemonService.getPokemons().subscribe(
+      pokemons => this.pokemons = pokemons
+    )
   }
  
   selectPokemon(pokemon:Pokemon):void{
     let link = ['/pokemon', pokemon.id];
     this.router.navigate(link);
   }
-  
+  trackByPokemon(index:number, pokemon:Pokemon):any{
+    let ide = pokemon.id;
+    return ide;
+   }
 }

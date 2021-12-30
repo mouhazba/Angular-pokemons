@@ -9,11 +9,11 @@ import { Directive, ElementRef, HostListener , Input} from "@angular/core";
 export class BorderCardDirective{
     constructor(private el:ElementRef){
         this.setBorder('#f5f5f5');
-        this.setHeigh(180);
+        this.setHeigh(170);
     }
 
     private setBorder(color:string){
-        let border = 'solid 4px' + color;
+        let border = 'solid 3px' + color;
         this.el.nativeElement.style.border = border;
     }
     //proprieté BorderColor

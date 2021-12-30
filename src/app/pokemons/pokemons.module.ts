@@ -1,7 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { AddPokemonComponent } from "./add-pokemon.component";
 import { BorderCardDirective } from "./border-card-directive";
+import { SuppressionPokemon } from "./confirmation-sup";
 import { DetailPokemonComponent } from "./detail-pokemon.component";
 import { EditPokemonComponent } from "./edit-pokemon.component";
 import { ListPokemonComponent } from "./list-pokemon.component";
@@ -14,8 +16,14 @@ import { PokemonService } from "./pokemons.service";
 @NgModule({
     imports:[CommonModule, PokemonRoutingModule, FormsModule],
     declarations:[
-        ListPokemonComponent,DetailPokemonComponent,EditPokemonComponent, PokemonFormComponent,
-        BorderCardDirective,PokemonTypeColorPipe,
+        ListPokemonComponent,
+        DetailPokemonComponent,
+        EditPokemonComponent, 
+        PokemonFormComponent,
+        BorderCardDirective,
+        PokemonTypeColorPipe,
+        SuppressionPokemon,
+        AddPokemonComponent
         ],
     providers:[PokemonService]
 

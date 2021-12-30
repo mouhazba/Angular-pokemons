@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Pokemon } from './pokemon';
 import { POKEMONS } from './mock-pokemons';
 import { PokemonService } from './pokemons.service';
+import { Observable } from 'rxjs';
  
 @Component({
     selector: 'detail-pokemon',
@@ -19,7 +20,12 @@ export class DetailPokemonComponent implements OnInit {
     ngOnInit():void {
         
         this.ids = this.route.snapshot.paramMap.get('id');
-        this.pokemon = this.pokemonService.getPokemon(+this.ids)
+        //this.pokemon = this.pokemonService.getPokemon(+this.ids)
+        this.pokemonService.getPokemon(+this.ids).subscribe(
+            pokemon =>{ 
+                this.pokemon = pokemon
+            }
+        )
     }
  
     goBack():void {
@@ -29,4 +35,14 @@ export class DetailPokemonComponent implements OnInit {
         let link = ['/pokemon/edit', pokemon.id];
         this.router.navigate(link)
     }
+
+    delete(pokemon:Pokemon):void{
+       /*  this.pokemonService.deletePokemon(pokemon).subscribe(
+            _ =>this.goBack()
+        ) */
+        let link = ['/pokemon/suppression', pokemon.id];
+        this.router.navigate(link)
+    }
+
+
 }

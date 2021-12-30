@@ -20,14 +20,14 @@
                 <div class="form-group">
                     <label for="hp">Point de vie</label>
                     <input type="text" class="form-control" [(ngModel)]="pokemon.hp" name="hp" 
-                    #hp="ngModel" id="cp">
+                    #name="ngModel" id="cp">
                 </div>
 
                 <!-- Pokemon cp -->
                 <div class="form-group">
                     <label for="cp">Dégâts</label>
                     <input type="number" class="form-control" [(ngModel)]="pokemon.cp" name="cp" 
-                    #cp="ngModel" id="cp">
+                    #name="ngModel" id="cp">
                 </div>
 
                 <!-- Pokemon types -->
@@ -44,7 +44,15 @@
                         </label>
                     </div>
                 </div>
-
+                <!-- Pokemon picture -->
+                <div *ngIf="isAddForm" class="form-group">
+                    <label for="picture">Image</label>
+                    <input type="url" class="form-control" id="picture" required
+                    [(ngModel)]="pokemon.picture" name="picture" #name="ngModel">
+                    <div [hidden] = "name.valid || name.pristine" class="card-panel red accent-1">
+                        l'image du pokemon est requise
+                     </div>
+                    </div>
                 <!-- Submit buttton -->
                 <div class="divider"></div>
                 <div class=" section center ">
@@ -52,6 +60,8 @@
                      [disabled]="!pokemonForm.form.valid">Valide
                     </button>
                 </div>
+
+           
             </div>
         </div>
     </div>
