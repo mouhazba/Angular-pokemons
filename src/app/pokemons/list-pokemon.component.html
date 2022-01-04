@@ -11,6 +11,7 @@
   <h1 class='center'>Pokémons</h1>
 <div class='container'>
   <div class="row">
+    <pokemon-search></pokemon-search>
   <div *ngFor="let pokemon of pokemons; trackBy:trackByPokemon" class="col s12 m6">
   <div class="card horizontal pointeur" (click)="selectPokemon(pokemon)" pkmnBorderCard>
     <div class="card-image">

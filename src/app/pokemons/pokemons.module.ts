@@ -11,7 +11,8 @@ import { PokemonFormComponent } from "./pokemon-form.component";
 import { PokemonTypeColorPipe } from "./pokemon-type-color.pipe";
 import { PokemonRoutingModule } from "./pokemons-routing.module";
 import { PokemonService } from "./pokemons.service";
-
+import { SearchPokemon } from "./searchPokemon";
+import { LoaderComponent } from "../loaderComponent";
 
 @NgModule({
     imports:[CommonModule, PokemonRoutingModule, FormsModule],
@@ -23,7 +24,9 @@ import { PokemonService } from "./pokemons.service";
         BorderCardDirective,
         PokemonTypeColorPipe,
         SuppressionPokemon,
-        AddPokemonComponent
+        AddPokemonComponent,
+        SearchPokemon,
+        LoaderComponent
         ],
     providers:[PokemonService]
 

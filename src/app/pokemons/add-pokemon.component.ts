@@ -11,7 +11,7 @@ import { PokemonService } from "./pokemons.service";
 })
 export class AddPokemonComponent implements OnInit{
     pokemon:Pokemon;
-    constructor(private pokemonService:PokemonService, private router:Router){}
+    constructor(private pkmnService:PokemonService, private router:Router){}
     ngOnInit(): void {
         this.pokemon = new Pokemon();
     }

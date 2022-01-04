@@ -104,4 +104,13 @@ export class PokemonService{
             catchError(this.handleErro<Pokemon>('addPokemon'))
         )
     }
+    //rechercher un pokemon par son nom
+    searchPokemon(term:string):Observable<Pokemon[]>{
+        if(!term.trim()){
+            return of([]);
+        }
+
+        return this.http.get<Pokemon[]>(`api/pokemons/?name=${term}`)
+    }
+
 }

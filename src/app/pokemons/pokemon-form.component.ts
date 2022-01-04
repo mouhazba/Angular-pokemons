@@ -56,8 +56,9 @@ export class PokemonFormComponent implements OnInit{
     onSubmit():void{
         if(this.isAddForm){
             this.pokemonService.addPokemon(this.pokemon).subscribe(
-                pokemon => {this.pokemon = pokemon;
-                this.goBack()}
+                pokemon => {
+                    this.pokemon = pokemon;
+                    this.goBack()}
             );
         }else{
             this.pokemonService.updatePokemon(this.pokemon).subscribe(

@@ -52,7 +52,7 @@
                     <div [hidden] = "name.valid || name.pristine" class="card-panel red accent-1">
                         l'image du pokemon est requise
                      </div>
-                    </div>
+                </div>
                 <!-- Submit buttton -->
                 <div class="divider"></div>
                 <div class=" section center ">
@@ -66,4 +66,6 @@
         </div>
     </div>
 </form>
-<h3 *ngIf="!pokemon" class="center">Aucun pokemon à éditer...</h3>
+<h3 *ngIf="!pokemon" class="center">
+    <pkmn-loader></pkmn-loader>
+</h3>
