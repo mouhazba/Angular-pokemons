@@ -7,7 +7,7 @@ import { Component } from "@angular/core"
     <h1>404 page not found</h1>
     </div>
     <h3>Hey, cette page n'existe pas !</h3>
-    <a routerLink="/pokemons" class="waves-effect waves-teal btn-flat">
+    <a routerLink="/pokemon/all" class="waves-effect waves-teal btn-flat">
     Retour à l'accueil</a>
             `
 })

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-foud.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'pokemons', pathMatch:'full'},
+  {path:'', redirectTo:'pokemon/all', pathMatch:'full'},
   {path:'**', component:PageNotFoundComponent}
 ];
 
